@@ -33,3 +33,6 @@ jobs:
 
     - name: Run application 
       run: docker-compose up
+
+    - name: Run application
+      run: docker-compose down
