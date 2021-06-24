@@ -1,0 +1,20 @@
+version: '3'
+services:
+  goodbey:
+    build: ./goodbey_world/
+    image: piotrflash/goodbey_world:0.1
+    ports:
+      - "5001:5000"
+  hello:
+    build: ./hello_world/
+    image: piotrflash/hello_world:0.1
+    ports:
+      - "5002:5000"
+  nginx:
+    build: ./nginx/
+    image: piotrflash/world-lb:0.1
+    ports:
+      - "80:80"
+    depends_on:
+      - goodbey
+      - hello
