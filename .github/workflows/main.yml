@@ -33,6 +33,7 @@ jobs:
 
     - name: Run application 
       run: docker-compose up
+      timeout-minutes: 2
 
-    - name: Run application
+    - name: Down application
       run: docker-compose down
