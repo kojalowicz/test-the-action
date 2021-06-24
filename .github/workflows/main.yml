@@ -32,4 +32,8 @@ jobs:
       run: docker-compose push
 
     - name: Run application 
-      run: docker-compose up
+      run: docker-compose up -d
+      timeout-minutes: 2
+
+    - name: Down application
+      run: docker-compose down
